@@ -1,13 +1,13 @@
 * {
   padding: 0;
   margin: 0;
-  font-family: "Share Tech Mono", "Ubuntu Mono", monospaced;
+  font-family: "Ubuntu";
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box; 
 }
 
-body {
-  background-color: #161616;
-  background-image: url("../img/background-image.png");
-}
+html, body { height: 100%; }
+
 
 nav {
   position: fixed;
@@ -19,7 +19,7 @@ nav {
   z-index: 1;
 }
 
-#bannersection, #aboutsection {
+#bannersection, #aboutsection, #contactsection {
   position: relative;
   display: table;
   width: 100%;
@@ -27,25 +27,35 @@ nav {
   
 }
 
-.bannercontent, .aboutcontent {
+.bannercontent, .aboutcontent, .contactcontent {
   display: table-cell;
   vertical-align: middle;
-  color: lime;
+  color: #2eaeb8;
   text-align: center;
   font-size: 18px;
   font-weight: normal;
   padding: 0 5%;
 }
 
+.bannercontent h1 {
+  font-size: 2.3em;
+}
+
+.bannercontent span {
+  background: -webkit-linear-gradient(#70d4db, #196166);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .aboutcontent p {
-  color: rgba(150, 200, 150, 1);
+  color: #5cced6;
 }
 
 .responsive {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 75%;
+  width: 20%;
   height: auto;
 }
 
@@ -53,14 +63,14 @@ nav {
 
 #menuList {
   height: 50px;
-  width: 300px;
+  width: 100vw;
   margin-left: auto;
   overflow: hidden;
 }
 
 #menuList li {
   list-style-type: none;
-  width: 150px;
+  width: 25vw;
   float: left;
   text-align: center;
 }
@@ -69,17 +79,18 @@ nav {
   display: block;
   text-decoration: none;
   font-size: 22px;
-  color: #0f0;
+  color: #70d4db;
   line-height: 50px;
 }
 
 #menuList li a:hover {
   background-color: rgba(40, 40, 40, 0.7);
-  color: rgba(133, 255, 133, 1);
+  color: #33f1ff;
 }
 
 #menuList li a:active {
-  
+  background-color: rgba(20, 78, 82, 0.7);
+  color: #33f1ff;
 }
 
 
@@ -88,3 +99,117 @@ nav {
   
   
 }
+
+
+/*
+PURE RESPONSIVE CSS3 SLIDESHOW GALLERY by Roko C. buljan
+http://stackoverflow.com/a/34696029/383904
+*/
+
+
+
+/* Parent wrapper to carousel. Width can be changed as needed. */
+#gallerysection {
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  margin: auto;
+  position: relative;
+  display: table;
+}
+
+/* Apply 'border-box' to 'box-sizing' so border and padding is included in the width and height. */
+#gallerysection * {
+  box-sizing: border-box;
+}
+
+/* We'll be using the 'transform' property to move the carousel's items, so setting the 'transform-style' to 'preserve-3d' will make sure our nested elements are rendered properly in the 3D space. */
+.carousel {
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+/* By default we're hiding items (except the initial one) until the JS initiates. Elements are absolutely positioned with a width of 100% (as we're styling for mobile first), letting the content's height dictate the height of the carousel. Our magic property here for all our animation needs is 'transition', taking the properties we wish to animate 'transform' and 'opacity', along with the length of time in seconds. */
+.carousel__photo {
+  opacity: 0;
+  position: absolute;
+  top:50%;
+  transform: translateY(50%);
+  width: 100%;
+  margin: auto;
+  padding: 1rem 4rem;
+  z-index: 100;
+  transition: transform .5s, opacity .5s, z-index .5s;
+}
+
+/* Display the initial item and bring it to the front using 'z-index'. These styles also apply to the 'active' item. */
+.carousel__photo.initial,
+.carousel__photo.active {
+  opacity: 1;
+  position: relative;
+  z-index: 900;
+}
+
+/* Set 'z-index' to sit behind our '.active' item. */
+.carousel__photo.prev,
+.carousel__photo.next {
+  z-index: 800;
+}
+
+/* Translate previous item to the left */
+.carousel__photo.prev {
+  transform: translateX(-100%);
+}
+
+/* Translate next item to the right */
+.carousel__photo.next {
+  transform: translateX(100%);
+}
+
+/* Style navigation buttons to sit in the middle, either side of the carousel. */
+.carousel__button--prev,
+.carousel__button--next {
+  position: absolute;
+  top:50vh;
+  width: 3rem;
+  height: 3rem;
+  margin: 0.5em;
+  background-color: #FFF;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  cursor: pointer; 
+  z-index: 1001; /* Sit on top of everything */
+  border:1px solid black;
+  opacity: .6;
+/*  opacity: 0;  Hide buttons until carousel is initialised 
+  transition:opacity 1s;*/
+}
+
+.carousel__button--prev {
+  left:0;
+}
+
+.carousel__button--next {
+  right:0;
+}
+
+/* Use pseudo elements to insert arrows inside of navigation buttons */
+.carousel__button--prev::after,
+.carousel__button--next::after {
+  content: " ";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 50%;
+  left: 54%;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+  transform: translate(-50%, -50%) rotate(135deg);
+}
+
+.carousel__button--next::after {
+  left: 47%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+

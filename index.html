@@ -16,52 +16,81 @@
   <meta property="og:image" content="img/thumbnail.png">
   
   
-  <!-- TODO: make Favicon stuff
+  <!-- TODO: make Favicon stuff -->
   <link rel="icon" href="/img/favicon.ico">
   <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="/img/favicon-152.png">
-  -->
+  <link rel="apple-touch-icon" href="/img/favicon.png">
   
   <!-- Specify fonts from google @ https://fonts.google.com/ -->
   
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Share+Tech+Mono">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu+Mono">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
   <link rel="stylesheet" href="css/styles.css?v=1.0">
+  <link rel="stylesheet" href="css/stars.css?v=1.0">
 
 </head>
 
 <body>
   
+  <div id="stars"></div>
+  <div id="stars2"></div>
+  <div id="stars3"></div>
+  
   <!-- Navigation -->
   <nav>
     <span id="menuButton"></span>
     <ul id="menuList">
-      <li><a href="#bannersection">Home</a></li>
-      <li><a href="#aboutsection">About</a></li>
-      <li><a href="#">Featured</a></li>
-      <li><a href="#">Gallery</a></li>
-      <li><a href="#">Contact</a></li>
+      <li><a class="menuLink" href="#bannersection">Home</a></li>
+      <li><a class="menuLink" href="#aboutsection">About</a></li>
+      <li><a class="menuLink" href="#gallerysection">Gallery</a></li>
+      <li><a class="menuLink" href="#contactsection">Contact</a></li>
     </ul>
   </nav>
-  
-  
   
   <!-- Title -->
   <div id="bannersection">
     <div class="bannercontent">
-      
       <img src="img/homeLogo.png" alt="INSERT PICTURE DESCRIPTION" class="responsive"></img>
-      <h1>An interactive web based portfolio for Graphic Design.</h1>
-      <p>
-        Author and Artist: Kimberly Breton<br/>
-        Website by: Corbin Breton
-      </p>
+        <h1>
+          <span>
+          An interactive web based portfolio for Graphic Design.
+          </span>
+        </h1>
+        <p>
+          Author and Artist: Kimberly Breton<br/>
+          Website by: Corbin Breton
+        </p>
     </div>
   </div>
   
   <!-- About -->
   <div id="aboutsection">
     <div class="aboutcontent">
+      <h1>Title</h1>
+      <p>
+        filler text
+      </p>
+    </div>
+  </div>
+  
+  <!-- Gallery -->
+  <div id="gallerysection">
+    <div class="carousel">
+
+      <img class="carousel__photo initial" src="http://placekitten.com/1600/900">
+      <img class="carousel__photo" src="http://placekitten.com/g/1600/900">
+      <img class="carousel__photo" src="http://placekitten.com/1600/900">
+      <img class="carousel__photo" src="http://placekitten.com/g/1600/900">
+      <img class="carousel__photo" src="http://placekitten.com/1600/900">
+      
+      <div class="carousel__button--next"></div>
+      <div class="carousel__button--prev"></div>
+
+    </div>
+  </div>
+  
+  <!-- Contact -->
+  <div id="contactsection">
+    <div class="contactcontent">
       <h1>Title</h1>
       <p>
         filler text
