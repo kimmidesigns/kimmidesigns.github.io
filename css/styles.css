@@ -41,14 +41,23 @@ nav {
   font-size: 2.3em;
 }
 
-.bannercontent span {
+h1 span {
   background: -webkit-linear-gradient(#70d4db, #196166);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
+.aboutcontent {
+  padding: 20%
+}
+
 .aboutcontent p {
+  display: block;
+  background-color: rgba(55, 55, 55, .6);
+  border-radius: 10px;
+  padding: 0.5em;
   color: #5cced6;
+  box-shadow: 2px 2px 4px #000000;
 }
 
 .responsive {
@@ -99,12 +108,6 @@ nav {
   
   
 }
-
-
-/*
-PURE RESPONSIVE CSS3 SLIDESHOW GALLERY by Roko C. buljan
-http://stackoverflow.com/a/34696029/383904
-*/
 
 
 
