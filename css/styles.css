@@ -41,6 +41,10 @@ nav {
   font-size: 2.3em;
 }
 
+h1 {
+  padding-bottom: 0.5em;
+}
+
 h1 span {
   background: -webkit-linear-gradient(#70d4db, #196166);
   -webkit-background-clip: text;
@@ -56,8 +60,10 @@ h1 span {
   background-color: rgba(55, 55, 55, .6);
   border-radius: 10px;
   padding: 0.5em;
+  font-size: 1.2em;
   color: #5cced6;
-  box-shadow: 2px 2px 4px #000000;
+  text-shadow: 1px 1px 2px #000000;
+  box-shadow: 1px 1px 3px #000000;
 }
 
 .responsive {
