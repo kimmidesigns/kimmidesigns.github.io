@@ -72,7 +72,7 @@ nav #menuList a:active {
 
 .home-container h1 span, .about-container h1 span, .gallery-container h1 span, .contact-container h1 span {
   background: -webkit-linear-gradient(#70d4db, #196166);
-  background-clip: text;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 

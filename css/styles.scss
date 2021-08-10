@@ -86,7 +86,7 @@ nav {
 
         span {
             background: -webkit-linear-gradient(color(gradient-light), color(gradient-dark));
-            background-clip: text;
+            -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
     }
