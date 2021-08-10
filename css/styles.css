@@ -119,8 +119,10 @@ nav #menuList a:active {
 
 .gallery-container {
   display: table-cell;
+  vertical-align: middle;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
   padding: 0;
 }
 
