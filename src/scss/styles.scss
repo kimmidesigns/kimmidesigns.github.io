@@ -88,6 +88,7 @@ nav {
     text-align: center;
     color: color(primary);
     overflow: hidden;
+    font-size: 3vw;
 
     h1 {
         font-size: 2.2em;
@@ -263,6 +264,8 @@ nav {
     }
 
     .home-container, .about-container, .contact-container {
+        font-size: 1.7vw;
+
         p, > ul {
             width: 45vw;
         }
