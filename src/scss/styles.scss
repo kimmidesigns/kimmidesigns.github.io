@@ -1,3 +1,5 @@
+@use "./mixins.scss";
+
 $base: #5cced6;
 $accent: #33f1ff;
 
@@ -103,7 +105,7 @@ nav {
         display: block;
         background-color: color(card);
         border-radius: 10px;
-        width: 40vw;
+        width: 70vw;
         margin-left: auto;
         margin-right: auto;
         padding: 0.5em;
@@ -154,18 +156,18 @@ nav {
     margin: auto;
     position: relative;
     display: table;
+
 }
 
 #gallery * { box-sizing: border-box; }
 
 .gallery-container {
-    -webkit-transform-style: preserve-3d;
-    -moz-transform-style: preserve-3d;
+    overflow: visible;
     transform-style: preserve-3d;
+
 }
 
 .carousel__photo {
-    opacity: 0;
     position: absolute;
     top: 50vh;
     transform: translateY(-50%);
@@ -175,11 +177,10 @@ nav {
     margin: auto;
     padding: 1rem 4rem;
     z-index: 100;
-    transform: transform .5s, opacity .5s, z-index .5s;
+    transform: transform .5s, z-index .5s;
 }
 
 .carousel__photo.initial, .carousel__photo.active {
-    opacity: 1;
     position: relative;
     z-index: 900;
 }
@@ -240,4 +241,12 @@ nav {
 .carousel__button--next::after {
     left: 47%;
     transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+@media screen and (min-width: 650px) {
+    .home-container, .about-container, .contact-container {
+        p, > ul {
+            width: 45vw;
+        }
+    }
 }
