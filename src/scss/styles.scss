@@ -116,6 +116,10 @@ nav {
         list-style-type: none;
     }
 
+    li + li {
+        margin-top: .3em;
+    }
+
     a {
         text-decoration: none;
         color: color(link);
@@ -141,7 +145,7 @@ nav {
     bottom: 0;
     margin-left: auto;
     margin-right: auto;
-    padding: 1em;
+    margin-bottom: 4em;
     ul {
         display: block;
         list-style-type: none;
