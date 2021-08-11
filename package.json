@@ -1,0 +1,31 @@
+{
+  "name": "kimmidesigns.github.io",
+  "version": "1.0.0",
+  "description": "Graphic Design Portfolio",
+  "scripts": {
+    "start": "parcel ./src/index.html",
+    "prebuild-dev": "shx rm -rf dist/*",
+    "build-dev": "parcel build ./src/index.html --no-minify --public-url ./",
+    "prebuild": "shx rm -rf dist/*",
+    "build": "parcel build ./src/index.html --public-url ./",
+    "push-gh-pages": "push-dir --dir=dist --branch=gh-pages --cleanup --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kimmidesigns/kimmidesigns.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kimmidesigns/kimmidesigns.github.io/issues"
+  },
+  "homepage": "https://github.com/kimmidesigns/kimmidesigns.github.io#readme",
+  "devDependencies": {
+    "@parcel/transformer-image": "^2.0.0-rc.0",
+    "@parcel/transformer-sass": "^2.0.0-rc.0",
+    "parcel": "^2.0.0-rc.0",
+    "sass": "^1.37.5",
+    "shx": "^0.3.2"
+  }
+}
