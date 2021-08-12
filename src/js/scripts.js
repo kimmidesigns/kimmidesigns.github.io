@@ -23,20 +23,13 @@ $(document).ready(function(){
     };
   });
   
-  
-  var parallax = document.querySelectorAll("html"),
-      speed = 1;
-
-  window.onscroll = function(){
-    [].slice.call(parallax).forEach(function(el,i){
-
-      var windowYOffset = window.pageYOffset,
-          elBackgrounPos = "100% " + (windowYOffset * speed) + "px";
-
-      el.style.backgroundPosition = elBackgrounPos;
-
-    });
-  };
+  // Refresh on resize
+  $(window).bind('resize', function(e) {
+  if (window.RT) clearTimeout(window.RT);
+  window.RT = setTimeout(function() {
+      this.location.reload(false); /* false to get page from cache */
+    }, 100);
+  });
   
 
   // BEGIN Carousel Handler
@@ -74,7 +67,7 @@ $(document).ready(function(){
   
       setTimeout(function(){
         moving = false
-      }, 230);
+      }, 300);
     }
   
     function moveCarouselTo(slide) {
