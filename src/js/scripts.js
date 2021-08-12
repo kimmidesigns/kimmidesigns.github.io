@@ -42,11 +42,11 @@ $(document).ready(function(){
 
   !(function(d){
     // Variables to target our base class,  get carousel items, count how many carousel items there are, set the slide to 0 (which is the number that tells us the frame we're on), and set motion to true which disables interactivity.
-    var itemClassName = "carousel__photo";
+    var itemClassName = "carousel__photo",
         items = d.getElementsByClassName(itemClassName),
         totalItems = items.length,
         slide = 0,
-        moving = true; 
+        moving = true;
   
     // To initialise the carousel we'll want to update the DOM with our own classes
     function setInitialClasses() {
@@ -74,7 +74,7 @@ $(document).ready(function(){
   
       setTimeout(function(){
         moving = false
-      }, 500);
+      }, 230);
     }
   
     function moveCarouselTo(slide) {
@@ -95,6 +95,13 @@ $(document).ready(function(){
         if ((totalItems - 1) > 3) {
   
           // Checks if the new potential slide is out of bounds and sets slide numbers
+
+          if (slide <= 0) {
+            newPrevious = (totalItems - 1);
+          } else if (slide >= (totalItems - 1)){
+            newNext = 0;
+          }
+
           if (newPrevious <= 0) {
             oldPrevious = (totalItems - 1);
           } else if (newNext >= (totalItems - 1)){
@@ -102,11 +109,11 @@ $(document).ready(function(){
           }
   
           // Check if current slide is at the beginning or end and sets slide numbers
-          if (slide === 0) {
+          if (slide == 0) {
             newPrevious = (totalItems - 1);
             oldPrevious = (totalItems - 2);
             oldNext = (slide + 1);
-          } else if (slide === (totalItems -1)) {
+          } else if (slide == (totalItems -1)) {
             newPrevious = (slide - 1);
             newNext = 0;
             oldNext = 1;
@@ -133,7 +140,7 @@ $(document).ready(function(){
       if (!moving) {
   
         // If it's the last slide, reset to 0, else +1
-        if (slide === (totalItems - 1)) {
+        if (slide == (totalItems - 1)) {
           slide = 0;
         } else {
           slide++;
@@ -151,7 +158,7 @@ $(document).ready(function(){
       if (!moving) {
   
         // If it's the first slide, set as the last slide, else -1
-        if (slide === 0) {
+        if (slide == 0) {
           slide = (totalItems - 1);
         } else {
           slide--;
