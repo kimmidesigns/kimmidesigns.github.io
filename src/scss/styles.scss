@@ -29,10 +29,14 @@ $colors: (
     padding: 0;
     margin: 0;
     font-family: "Ubuntu";
-    box-sizing: border-box;
 }
 
-html, body { height: 100%; }
+html, body { height: 100vh; }
+
+body {
+    display: table;
+    scroll-snap-type: y mandatory;
+}
 
 nav {
     position: fixed;
@@ -76,10 +80,11 @@ nav {
 }
 
 #home, #about, #gallery , #contact {
-    display: table;
+    display: table-row;
     position: relative;
     width: 100%;
     height: 100vh;
+    scroll-snap-align: start;
 }
 
 .home-container, .about-container, .contact-container {
@@ -87,7 +92,6 @@ nav {
     vertical-align: middle;
     text-align: center;
     color: color(primary);
-    overflow: hidden;
     font-size: 3vw;
 
     h1 {
@@ -160,7 +164,6 @@ nav {
 }
 
 #gallery {
-    overflow: hidden;
     width: 100%;
     height: 100vh;
     margin: auto;
@@ -172,7 +175,6 @@ nav {
 #gallery * { box-sizing: border-box; }
 
 .gallery-container {
-    overflow: visible;
     transform-style: preserve-3d;
 
 }
